@@ -1,7 +1,5 @@
 # EditePDF
 
-**[Abrir landing page do projeto](https://gualbertothi.github.io/EditePDF/)**
-
 **Edição de PDF local para Windows.**
 
 Projeto independente de editor de PDF desenvolvido com **React, TypeScript, Vite, Electron, Tiptap/ProseMirror, PDF.js e pdf-lib**, com foco em edição estrutural do documento e preservação visual.
