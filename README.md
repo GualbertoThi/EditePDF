@@ -21,9 +21,11 @@ A aplicação trabalha localmente no Windows e reúne recursos para:
 - colar conteúdo tabular vindo do Excel;
 - exportar uma nova cópia em PDF.
 
-## Demonstração
+## Demonstração
 
-A landing page do projeto está em [`site/`](./[site](https://gualbertothi.github.io/EditePDF/)/).
+A landing page publicada pode ser acessada em **[gualbertothi.github.io/EditePDF](https://gualbertothi.github.io/EditePDF/)**.
+
+O código-fonte da página está versionado na pasta [`site/`](./site/).
 
 Ela usa conteúdo inteiramente sintético. Nenhum documento real usado durante o desenvolvimento faz parte da versão pública.
 
