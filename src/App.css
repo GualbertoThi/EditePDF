@@ -1,0 +1,34 @@
+.app-shell { min-height: 100vh; background: #f5f4f0; color: #29302f; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+button, input { font: inherit; }
+button { cursor: pointer; border: 1px solid #deded8; border-radius: 5px; background: #fffdf9; color: #4d554f; padding: 8px 12px; }
+button:disabled { cursor: default; opacity: .45; }
+button:focus-visible { outline: 2px solid #d65f41; outline-offset: 2px; }
+button:hover:not(:disabled), button[aria-pressed="true"] { background: #f8e9e4; color: #b34428; }
+.topbar { height: 64px; background: #fffdf9; border-bottom: 1px solid #deded8; display: flex; align-items: center; padding: 0 24px; gap: 12px; }
+.brand-mark { width: 32px; height: 32px; display: grid; place-items: center; background: #e56d4d; color: white; font: 21px Georgia, serif; border-radius: 8px; flex-shrink: 0; }
+.brand-name { font: 17px Georgia, serif; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.brand-name span { font: 12px Arial, sans-serif; color: #717872; margin-left: 18px; }
+.top-actions { display: flex; gap: 8px; margin-left: auto; flex-shrink: 0; font-size: 12px; }
+.workspace { display: flex; height: calc(100vh - 64px); min-height: 0; }
+.left-panel { background: #fffdf9; width: 140px; flex: 0 0 140px; border-right: 1px solid #deded8; padding: 24px 12px; }
+.panel-label { color: #717872; font-size: 10px; letter-spacing: 1px; margin-bottom: 12px; }
+.tool-button { width: 100%; border: 0; text-align: left; margin-bottom: 6px; font-size: 12px; }
+.panel-divider { border-top: 1px solid #ecebe5; margin: 18px 0; }
+.session-note { font-size: 11px; color: #717872; line-height: 1.6; }
+.editor-area { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+.document-panes { display: flex; flex: 1; min-height: 0; overflow: hidden; }
+.original-pane, .editing-pane { flex: 1; min-width: 0; height: 100%; }
+.mode-split .editing-pane { border-left: 1px solid #deded8; }
+[hidden] { display: none !important; }
+.panel-heading { display: flex; justify-content: space-between; gap: 10px; padding: 14px 18px; background: #fffdf9; border-bottom: 1px solid #deded8; font-size: 12px; }
+.panel-heading span { color: #717872; }
+.editor-status { min-height: 38px; background: #fffdf9; border-top: 1px solid #deded8; display: flex; align-items: center; justify-content: space-between; padding: 0 22px; color: #717872; font-size: 11px; gap: 10px; }
+.zoom-controls { display: flex; align-items: center; gap: 10px; }
+.zoom-controls button { padding: 2px 8px; border: 0; font-size: 18px; }
+.message { padding: 12px 18px; font-size: 13px; }
+.error { color: #9b3027; background: #fff0ec; }
+.welcome { flex: 1; padding: 60px 40px; }
+.welcome h1 { font-family: Georgia, serif; }
+.welcome p { max-width: 580px; line-height: 1.6; }
+@media (max-width: 800px) { .left-panel { width: 108px; flex-basis: 108px; padding: 18px 8px; } .topbar { padding: 0 12px; } .brand-name span { display: none; } .top-actions button:disabled { display: none; } .mode-split { flex-direction: column; overflow-y: auto; } .mode-split > div { flex: none; height: 65vh; } .editor-status { padding: 0 10px; } }

@@ -1,0 +1,46 @@
+name: Relatar um problema
+description: Informe um comportamento inesperado do EditePDF.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o comportamento observado de forma objetiva.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Como reproduzir?
+      description: Informe os passos mínimos necessários.
+      placeholder: |
+        1. Abrir...
+        2. Selecionar...
+        3. Clicar...
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Versão do EditePDF
+      placeholder: "0.1.0"
+    validations:
+      required: true
+
+  - type: input
+    id: windows
+    attributes:
+      label: Versão do Windows
+      placeholder: "Windows 11 64 bits"
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Informações adicionais
+      description: Prints e arquivos de exemplo ajudam, mas remova dados pessoais ou confidenciais.

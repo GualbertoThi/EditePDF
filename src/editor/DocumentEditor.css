@@ -1,0 +1,96 @@
+.document-editor { display: flex; flex-direction: column; height: 100%; min-width: 0; }
+.editor-heading { flex-wrap: wrap; gap: 8px; }
+.editor-zoom { display: flex; align-items: center; gap: 6px; }
+.editor-zoom button { padding: 4px 8px; font-size: 12px; }
+.editor-zoom output { min-width: 42px; text-align: center; font-size: 12px; font-variant-numeric: tabular-nums; }
+.format-toolbar { display: flex; flex-wrap: wrap; gap: 5px; padding: 10px 14px; background: #fffdf9; border-bottom: 1px solid #deded8; }
+.format-toolbar button { font-size: 11px; padding: 6px 8px; }
+.format-toolbar { align-items: center; }
+.format-field { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; }
+.format-field select, .format-field input { height: 29px; border: 1px solid #deded8; border-radius: 5px; background: #fffdf9; color: #4d554f; font: inherit; }
+.format-field select { max-width: 150px; padding: 3px; }
+.format-field input[type="color"] { width: 34px; padding: 2px; cursor: pointer; }
+.import-notice { padding: 10px 16px; margin: 0; font-size: 11px; line-height: 1.5; color: #756b61; }
+.document-scroll { flex: 1; min-height: 0; overflow: auto; padding: 24px; }
+.document-sheet { display: flow-root; box-sizing: border-box; margin: 0 auto; background: white; box-shadow: 0 5px 18px #31342e20; }
+.document-stack { margin: 0 auto; }
+.document-stack .tiptap { display: flow-root; position: relative; outline: none; font: 9pt/1.2 Arial, sans-serif; color: black; overflow-wrap: break-word; }
+.document-stack .document-sheet + .document-sheet { margin-top: 24px; }
+.tiptap p, .tiptap h1, .tiptap h2 { margin: 0; }
+.tiptap table { border-collapse: collapse; table-layout: fixed; margin: 0; }
+.tiptap td, .tiptap th { border: none; padding: 0; vertical-align: top; position: relative; min-width: 24px; }
+.tiptap th { text-align: left; }
+.tiptap td p, .tiptap th p { margin: 0; }
+.tiptap .tableWrapper { overflow-x: auto; }
+.pdf-flow-region { display: flow-root; max-width: 100%; }
+.pdf-flow-columns { display: flex; align-items: flex-start; }
+.pdf-flow-column { min-width: 0; }
+.tiptap .selectedCell::after { background: #e56d4d33; content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.tiptap .column-resize-handle { position: absolute; right: -2px; top: 0; bottom: 0; width: 4px; background: #d65f41; pointer-events: none; }
+.tiptap.resize-cursor { cursor: col-resize; }
+.tiptap .ProseMirror-gapcursor { display: none; pointer-events: none; position: absolute; }
+.tiptap .ProseMirror-gapcursor:after { content: ''; display: block; position: absolute; top: -2px; width: 20px; border-top: 1px solid black; animation: cursor-blink 1s steps(2, start) infinite; }
+.tiptap.ProseMirror-focused .ProseMirror-gapcursor { display: block; }
+@keyframes cursor-blink { to { visibility: hidden; } }
+.document-sheet { position: relative; }
+.document-sheet[data-page-number]::after { content: attr(data-page-number); position: absolute; bottom: 8pt; left: var(--page-left); right: var(--page-right); text-align: var(--page-number-align); font: 9pt/1.2 Arial, sans-serif; color: #29302f; pointer-events: none; }
+.local-image { display: block; object-fit: contain; }
+.pdf-image-stack > .local-image { position: absolute; inset: 0; }
+.local-image.ProseMirror-selectednode { outline: 2px solid #d65f41; }
+.page-settings { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 12px 14px; background: #fffdf9; border-bottom: 1px solid #deded8; font-size: 12px; }
+.page-settings label { display: flex; align-items: center; gap: 5px; }
+.page-settings input[type="number"] { width: 75px; }
+.page-settings input, .page-settings select { padding: 5px; border: 1px solid #deded8; border-radius: 4px; font: inherit; }
+.tool-notice { margin: 0; padding: 8px 14px; font-size: 12px; background: #fff3dc; }
+.format-painter-active .tiptap { cursor: crosshair; }
+
+/* Compact command surface: keeps the validated editor behavior while giving
+   more vertical space back to the document. */
+.editor-heading { padding: 8px 12px; min-height: 40px; flex-wrap: nowrap; }
+.editor-heading > strong, .editor-heading > span { white-space: nowrap; }
+.editor-zoom { margin-left: auto; }
+.editor-zoom button { padding: 3px 7px; }
+.format-toolbar {
+  flex-wrap: nowrap;
+  gap: 4px;
+  padding: 6px 10px;
+  min-height: 38px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+}
+.format-toolbar button { flex: 0 0 auto; font-size: 10.5px; padding: 5px 7px; white-space: nowrap; }
+.format-field { flex: 0 0 auto; font-size: 10.5px; white-space: nowrap; }
+.format-field select, .format-field input { height: 27px; }
+.format-field select { max-width: 132px; padding: 2px 4px; }
+.format-field input[type="color"] { width: 31px; height: 27px; }
+.toolbar-separator { flex: 0 0 1px; align-self: stretch; min-height: 22px; background: #deded8; margin: 1px 2px; }
+.toolbar-page-count { flex: 0 0 auto; min-width: 38px; text-align: center; font-size: 10px; color: #717872; font-variant-numeric: tabular-nums; }
+.secondary-toolbar { border-top: 0; }
+.compact-color { gap: 3px; }
+.import-summary {
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  margin: 0;
+  border-bottom: 1px solid #e8e6df;
+  background: #faf9f5;
+  color: #756b61;
+  font-size: 10.5px;
+  line-height: 1.3;
+  flex-wrap: wrap;
+}
+.import-summary > span:first-child { white-space: nowrap; }
+.import-summary button { padding: 2px 7px; font-size: 10px; }
+.import-details { flex-basis: 100%; padding: 2px 0 4px; }
+.page-settings { gap: 7px; padding: 7px 10px; font-size: 11px; }
+.page-settings input, .page-settings select { padding: 4px; }
+.page-settings button { padding: 5px 8px; font-size: 10.5px; }
+.compact-panel { min-height: 36px; }
+.find-replace label { gap: 4px; }
+.find-replace input[type="text"] { width: 170px; }
+.find-replace .match-count { min-width: 40px; text-align: center; color: #717872; font-variant-numeric: tabular-nums; }
+.tool-notice { padding: 6px 10px; font-size: 10.5px; }
+.document-scroll { padding-top: 18px; }

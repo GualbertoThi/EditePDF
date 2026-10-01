@@ -1,0 +1,12 @@
+.original-viewer { display: flex; flex-direction: column; height: 100%; min-width: 0; }
+.original-scroll { flex: 1; min-height: 0; overflow: auto; padding: 24px; }
+.original-stack { margin: 0 auto; display: flex; flex-direction: column; gap: 24px; }
+.original-page { flex: none; background: white; box-shadow: 0 5px 18px #31342e20; }
+.original-page-layers { position: relative; min-height: 80px; }
+.original-page canvas { display: block; }
+.original-page-number { text-align: center; font-size: 11px; padding: 8px; color: #717872; }
+.original-page .textLayer { position: absolute; inset: 0; overflow: clip; line-height: 1; text-align: initial; letter-spacing: normal; word-spacing: normal; text-size-adjust: none; transform-origin: 0 0; --min-font-size: 1; --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size)); --min-font-size-inv: calc(1 / var(--min-font-size)); }
+.original-page .textLayer :is(span, br) { color: transparent; position: absolute; white-space: pre; cursor: text; transform-origin: 0 0; user-select: text; }
+.original-page .textLayer > :not(.markedContent), .original-page .textLayer .markedContent span:not(.markedContent) { z-index: 1; --font-height: 0; font-size: calc(var(--text-scale-factor) * var(--font-height)); --scale-x: 1; --rotate: 0deg; transform: rotate(var(--rotate)) scaleX(var(--scale-x)) scale(var(--min-font-size-inv)); }
+.original-page .textLayer .markedContent { display: contents; }
+.original-page .textLayer ::selection { background: #e56d4d55; color: transparent; }

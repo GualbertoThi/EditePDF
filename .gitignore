@@ -1,0 +1,68 @@
+# Dependências e builds
+node_modules/
+dist/
+release/
+.local-browsers/
+.npm-cache/
+.electron-builder-cache/
+.desktop-stage/
+.desktop-tools/
+
+# Material de desenvolvimento local / auditoria
+.review/
+backups/
+Prompt/
+pdfs/
+
+# Documentos e pacotes que não devem entrar no repositório
+*.pdf
+*.xlsx
+*.xls
+*.csv
+*.doc
+*.docx
+*.zip
+*.rar
+*.7z
+*.exe
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor / SO
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.local
+
+# Arquivos locais de preparacao/publicacao
+_backup_portfolio*/
+AUDITORIA_PUBLICACAO.md
+PUBLICAR.md
+gitignore_adicoes_sugeridas.txt
+NAO_ALTERA_EDITOR.txt
+*.zip
+*.exe
+
+# Arquivos temporarios e backups de desenvolvimento
+*.bak
+*.bak2
+*.tmp
+*~
+
+# PDFs em geral ficam bloqueados; fixtures sinteticos publicos sao excecao
+!fixtures-public/
+!fixtures-public/*.pdf

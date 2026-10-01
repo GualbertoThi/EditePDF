@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="EditePDF — projeto de editor de PDF local para Windows desenvolvido com React, TypeScript, Electron e ProseMirror.">
+  <meta name="theme-color" content="#f5f3ef">
+  <title>EditePDF — Projeto de editor de PDF para Windows</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#inicio"><span class="brand-mark">E</span><span>EditePDF</span></a>
+    <nav class="nav">
+      <a href="#projeto">Projeto</a><a href="#recursos">Recursos</a><a href="#arquitetura">Arquitetura</a><a href="#tecnologias">Tecnologias</a>
+      <a id="github-nav" href="#" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">PROJETO INDEPENDENTE · WINDOWS</p>
+        <h1>EditePDF</h1>
+        <p class="subtitle">Edição de PDF local para Windows.</p>
+        <p class="lead">Um projeto focado em reconstruir PDFs como documentos realmente editáveis: texto, tabelas, imagens e páginas em uma única estrutura de edição.</p>
+        <div class="actions">
+          <a id="github-hero" class="button primary" href="#" target="_blank" rel="noreferrer">Ver código no GitHub</a>
+          <a href="#arquitetura" class="button secondary">Ver arquitetura</a>
+        </div>
+        <p class="release-line">React · TypeScript · Electron · ProseMirror · PDF.js</p>
+      </div>
+      <div class="product-window">
+        <div class="window-bar"><span class="app-badge">E</span><strong>EditePDF</strong><span class="file-name">documento-exemplo.pdf</span><span class="window-spacer"></span><span class="mini-button">Abrir PDF</span><span class="mini-button">Salvar cópia PDF</span></div>
+        <div class="window-body">
+          <aside class="sidebar"><small>VISUALIZAÇÃO</small><span>Lado a lado</span><span>PDF original</span><span class="active">Editar documento</span></aside>
+          <div class="workspace">
+            <div class="toolbar"><span>Fonte</span><span class="field">Arial</span><span>Tamanho</span><span class="field">10 pt</span><span class="tool">B</span><span class="tool italic">I</span><span class="tool underline">U</span><span class="tool wide">Localizar</span><span class="tool wide">Imagem</span><span class="tool wide">+ Página</span></div>
+            <div class="page-stage">
+              <article class="paper">
+                <div class="doc-logo">E</div><div class="doc-kicker">DOCUMENTO SINTÉTICO DE DEMONSTRAÇÃO</div><h3>Relatório de exemplo</h3><p class="doc-subtitle">Conteúdo fictício usado apenas para apresentar a interface.</p>
+                <div class="doc-table">
+                  <div class="head">DATA</div><div class="head">DESCRIÇÃO</div><div class="head">VALOR</div>
+                  <div>01/10</div><div>Texto editável no documento</div><div>1.250,00</div>
+                  <div>02/10</div><div>Tabelas, imagens e páginas</div><div>875,40</div>
+                  <div>03/10</div><div>Exportação para nova cópia</div><div>2.410,90</div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="synthetic-note">A demonstração acima usa conteúdo inteiramente fictício.</p>
+    </section>
+    <section class="section split" id="projeto">
+      <div><p class="eyebrow">O PROJETO</p><h2>Editar um PDF é diferente de desenhar por cima dele.</h2></div>
+      <div class="prose"><p>O EditePDF nasceu da tentativa de tratar o PDF como um documento reconstruível, e não apenas como uma página estática que recebe anotações.</p><p>O fluxo extrai conteúdo e geometria do arquivo original, cria uma árvore editável e mantém o PDF de origem separado como referência visual.</p><p>O resultado é um laboratório prático de reconstrução de layout, modelagem de documento, edição rich-text e exportação.</p></div>
+    </section>
+    <section class="section" id="recursos">
+      <div class="section-heading"><p class="eyebrow">RECURSOS IMPLEMENTADOS</p><h2>O foco está na edição estrutural.</h2></div>
+      <div class="feature-grid">
+        <article><span class="feature-index">01</span><h3>Texto e formatação</h3><p>Edição de conteúdo, fonte, tamanho, cor, alinhamento, negrito, itálico e sublinhado.</p></article>
+        <article><span class="feature-index">02</span><h3>Tabelas</h3><p>Linhas, colunas, fundos e conteúdo tabular tratados como elementos editáveis.</p></article>
+        <article><span class="feature-index">03</span><h3>Imagens</h3><p>Inserção, movimentação livre e redimensionamento mantendo a proporção.</p></article>
+        <article><span class="feature-index">04</span><h3>Páginas</h3><p>Duplicação, exclusão, inserção e reordenação de páginas no documento.</p></article>
+        <article><span class="feature-index">05</span><h3>Cópia e colagem</h3><p>Cópia interna com preservação de estrutura e tratamento específico para conteúdo do Excel.</p></article>
+        <article><span class="feature-index">06</span><h3>Exportação</h3><p>Geração de uma nova cópia em PDF a partir do estado editável do documento.</p></article>
+      </div>
+    </section>
+    <section class="section architecture" id="arquitetura">
+      <div class="section-heading"><p class="eyebrow">ARQUITETURA</p><h2>Uma única árvore editável como fonte de verdade.</h2></div>
+      <div class="pipeline">
+        <div><strong>PDF</strong><span>arquivo original</span></div><b>→</b>
+        <div><strong>PDF.js</strong><span>texto e geometria</span></div><b>→</b>
+        <div><strong>Reconstrução</strong><span>blocos e estrutura</span></div><b>→</b>
+        <div><strong>ProseMirror</strong><span>árvore canônica</span></div><b>→</b>
+        <div><strong>Exportação</strong><span>nova cópia PDF</span></div>
+      </div>
+      <div class="decision-grid">
+        <article><h3>PDF original separado</h3><p>O arquivo de origem continua disponível para comparação, sem competir com o estado editável.</p></article>
+        <article><h3>Metadados de origem</h3><p>Informações de estilo e posicionamento são preservadas quando úteis à reconstrução.</p></article>
+        <article><h3>Aplicação local</h3><p>O desktop usa Electron e um servidor local restrito a <code>127.0.0.1</code>.</p></article>
+      </div>
+    </section>
+    <section class="section" id="tecnologias">
+      <div class="section-heading"><p class="eyebrow">STACK</p><h2>Tecnologias usadas no projeto.</h2></div>
+      <div class="tech-list"><span>React</span><span>TypeScript</span><span>Vite</span><span>Electron</span><span>Tiptap</span><span>ProseMirror</span><span>PDF.js</span><span>pdf-lib</span><span>Tesseract.js</span><span>Playwright</span></div>
+    </section>
+    <section class="section split">
+      <div><p class="eyebrow">TESTES E PUBLICAÇÃO</p><h2>Documentos públicos são sintéticos.</h2></div>
+      <div class="prose"><p>A cópia pública do projeto foi separada do ambiente privado de desenvolvimento. PDFs reais, backups, prompts internos e materiais usados durante testes não fazem parte do repositório público.</p><p>Os fixtures publicados foram criados especificamente para testar tabelas, formulários, imagens e documentos de múltiplas páginas.</p></div>
+    </section>
+    <section class="project-links">
+      <div><p class="eyebrow">CÓDIGO</p><h2>Projeto, testes e histórico de evolução no GitHub.</h2></div>
+      <div class="project-actions"><a id="github-bottom" class="button primary" href="#" target="_blank" rel="noreferrer">Abrir repositório</a><a id="issues-bottom" class="button dark-secondary" href="#" target="_blank" rel="noreferrer">Issues</a></div>
+    </section>
+  </main>
+  <footer><div><strong>EditePDF</strong><span>Edição de PDF local para Windows.</span></div><span>Projeto independente.</span></footer>
+  <script src="./config.js"></script><script src="./script.js"></script>
+</body>
+</html>

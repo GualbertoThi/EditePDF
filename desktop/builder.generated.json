@@ -1,0 +1,59 @@
+{
+  "appId": "local.pdfeditor.desktop",
+  "productName": "PDF Editor",
+  "directories": {
+    "output": "release"
+  },
+  "electronVersion": "44.5.1",
+  "extraMetadata": {
+    "main": "desktop/main.mjs",
+    "version": "0.1.0",
+    "description": "Editor local de PDF"
+  },
+  "asar": false,
+  "npmRebuild": false,
+  "files": [
+    "desktop/main.mjs",
+    "desktop/server.mjs",
+    "desktop/pdfExport.mjs",
+    "package.json"
+  ],
+  "extraResources": [
+    {
+      "from": "dist",
+      "to": "dist"
+    },
+    {
+      "from": ".local-browsers/chromium_headless_shell-1243",
+      "to": ".local-browsers/chromium_headless_shell-1243"
+    },
+    {
+      "from": "node_modules/playwright",
+      "to": "node_modules/playwright"
+    },
+    {
+      "from": "node_modules/playwright-core",
+      "to": "node_modules/playwright-core"
+    },
+    {
+      "from": "node_modules/pdf-lib",
+      "to": "node_modules/pdf-lib"
+    }
+  ],
+  "win": {
+    "target": [
+      {
+        "target": "portable",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "signExecutable": false,
+    "artifactName": "PDF-Editor.exe"
+  },
+  "portable": {
+    "requestExecutionLevel": "user",
+    "unpackDirName": false
+  }
+}

@@ -1,0 +1,24 @@
+name: Sugerir uma melhoria
+description: Proponha uma melhoria objetiva para o EditePDF.
+title: "[Melhoria] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Qual problema a melhoria resolveria?
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Como você imagina essa melhoria?
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexto adicional
+      description: Explique exemplos de uso quando forem relevantes.
