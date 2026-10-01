@@ -165,4 +165,4 @@ Documentos reais, backups, histórico privado, prompts internos e materiais usad
 
 ## Licença
 
-A licença do projeto deve ser definida antes da publicação definitiva. Consulte [`PUBLICAR.md`](./PUBLICAR.md).
+A licença do projeto ainda não foi definida.
