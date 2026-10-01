@@ -23,7 +23,7 @@ A aplicação trabalha localmente no Windows e reúne recursos para:
 
 ## Demonstração
 
-A landing page do projeto está em [`site/`](./site/).
+A landing page do projeto está em [`site/`](./[site](https://gualbertothi.github.io/EditePDF/)/).
 
 Ela usa conteúdo inteiramente sintético. Nenhum documento real usado durante o desenvolvimento faz parte da versão pública.
 
